@@ -1,0 +1,105 @@
+<!-- BEGIN: client_section -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Hostit</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<section class="client_section ">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                {testimonial_title}
+            </h2>
+            <p>
+                {testimonial_description}
+            </p>
+        </div>
+    </div>
+    <div class="container px-0">
+        <div id="customCarousel2" class="carousel  slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- BEGIN: testimonial_items -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="{testimonial_items.image}" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="client_info">
+                                            <div class="client_name">
+                                                <h5>
+                                                    {testimonial_items.client_name}
+                                                </h5>
+                                                <h6>
+                                                    {testimonial_items.client_type}
+                                                </h6>
+                                            </div>
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        </div>
+                                        <p>
+                                            {testimonial_items.testimonial_text}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: testimonial_items -->
+            </div>
+            <div class="carousel_btn-box">
+                <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+<!-- END: client_section -->

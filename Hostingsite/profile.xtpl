@@ -1,0 +1,58 @@
+<!-- BEGIN: main -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{page_title}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .order-table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 profile-container">
+        <h2>Kullanıcı Profili</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Kullanıcı Bilgileri</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Kullanıcı Adı:</strong> {username}</li>
+                    <li class="list-group-item"><strong>İsim Soyisim:</strong> {full_name}</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="order-table">Siparişler</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sipariş ID</th>
+                    <th>Ürün Adı</th>
+                    <th>Sipariş Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- BEGIN: orders -->
+                <tr>
+                    <td>{order_id}</td>
+                    <td>{product_name}</td>
+                    <td>{order_date}</td>
+                </tr>
+                <!-- END: orders -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- END: main -->

@@ -1,0 +1,75 @@
+<!-- BEGIN: main -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>{title}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Paket Adı</th>
+                    <th>Fiyat</th>
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- BEGIN: sepet_urunler -->
+               
+                <tr>
+                    <td>{plan_name}</td>
+                    <td>${price}</td>
+                    <td>
+                      <button class="remove-from-cart" data-product-id="{id}">Sepetten Çıkar</button>
+
+                    </td>
+                </tr>
+                <div class="container mt-3">
+    <h4>Toplam Tutar: {price}$</h4>
+    <a href="odemeye_gec.php" class="btn btn-primary">Ödemeye Geç</a>
+</div>
+                <!-- END: sepet_urunler -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+   $(document).ready(function() {
+ 
+    $(".remove-from-cart").click(function() {
+        
+        var productId = $(this).data("product-id");
+
+   
+        $.ajax({
+            url: 'sepetten_cikar.php', 
+            method: 'POST',
+            data: { product_id: productId }, 
+            success: function(response) {
+               
+                alert('Ürün sepetten cikarildi.');
+               
+            },
+        
+            error: function(xhr, status, error) {
+             
+                console.error('Hata oluştu: ' + error);
+            }
+        });
+    });
+});
+    
+</script>
+            </tbody>
+        </table>
+    </div>
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- END: main -->

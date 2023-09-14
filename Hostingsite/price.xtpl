@@ -1,0 +1,118 @@
+<!-- BEGIN: main -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Hostit</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<section class="price_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                {pricing_title}
+            </h2>
+        </div>
+        <div class="price_container">
+            <!-- BEGIN: price_boxes -->
+            {price_boxes}
+            <!-- Paket 1 -->
+            <div class="box">
+                <div class="detail-box">
+                    <h2>$ <span>{price}</span></h2>
+                    <h6>
+                        {plan_name}
+                    </h6>
+                    <ul class="price_features">
+                        <li>
+                            {ram}
+                        </li>
+                        <li>
+                            {storage}
+                        </li>
+                        <li>
+                            {backups}
+                        </li>
+                        <li>
+                            {protection}
+                        </li>
+                        <li>
+                            {root_access}
+                        </li>
+                        <li>
+                            {tech_support}
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <a href="{detail_link}">
+                        See Detail
+                    </a>
+                      <button class="add-to-cart" data-product-id="{id}">Sepete Ekle</button>
+                </div>
+            </div>
+           
+            <!-- END: price_boxes -->
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function() {
+    
+    $(".add-to-cart").click(function() {
+       
+        var productId = $(this).data("product-id");
+
+       
+        $.ajax({
+            url: 'sepete_ekle.php', 
+            method: 'POST',
+            data: { product_id: productId }, 
+            success: function(response) {
+               
+                alert('Ürün sepete eklendi.');
+                window.location.href = 'cart.php';
+            },
+        
+            error: function(xhr, status, error) {
+                
+                console.error('Hata oluştu: ' + error);
+            }
+        });
+    });
+});
+    
+</script>
+</script>
+<!-- END: main -->
